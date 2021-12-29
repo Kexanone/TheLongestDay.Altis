@@ -1,5 +1,5 @@
 reviveMode = 1; // Enable revive
-reviveUnconsciousStateMode = 0;	// Basic revive mode
+reviveUnconsciousStateMode = 0; // Basic revive mode
 reviveRequiredTrait = 1; // Require medic for revive
 reviveRequiredItems = 1; // Medkit required for revive
 reviveRequiredItemsFakConsumed = 0; // No items consumed for revive
