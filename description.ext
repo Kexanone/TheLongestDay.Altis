@@ -1,0 +1,23 @@
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 30;
+};
+
+author="Kex";
+briefingName = $STR_TLD_briefing_title;
+overviewPicture = "data\images\overview.paa";
+overviewText = $STR_TLD_briefing_title_description;
+onLoadName = $STR_TLD_briefing_title;
+onLoadMission = $STR_TLD_briefing_title_description;
+loadScreen = "data\images\overview.paa";
+
+disabledAI = 1;
+aiKills = 0;
+
+#include "config.hpp"
+#include "params.hpp"
+#include "cfgFunctions.hpp"
+#include "cfgMusic.hpp"
+#include "cfgTaskDescriptions.hpp"

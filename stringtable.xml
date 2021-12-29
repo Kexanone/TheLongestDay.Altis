@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TLD">
+    <Package name="Arsenal">
+        <Key ID="STR_TLD_arsenal_tiEquipmentRemoved">
+            <English>Thermal imaging equipment was removed!</English>
+            <German>Wärmebildgeräte wurden entfernt!</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_cannotTakeWeapon">
+            <English>Cannot take weapon!</English>
+            <German>Waffe kann nicht aufgenommen werden!</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_weaponRemoved">
+            <English>Weapons got removed!</English>
+            <German>Waffen wurden entfernt!</German>
+        </Key>
+    </Package>
+    <Package name="BaseProtection">
+        <Key ID="STR_TLD_baseProtection_enabled">
+            <English>Base protection enabled</English>
+            <German>Stützpunktsschutz eingeschaltet</German>
+        </Key>
+        <Key ID="STR_TLD_baseProtection_disabled">
+            <English>Base protection disabled</English>
+            <German>Stützpunktsschutz ausgeschaltet</German>
+        </Key>
+    </Package>
+    <Package name="Briefing">
+        <Key ID="STR_TLD_briefing_title">
+            <English>The Longest Day</English>
+            <German>Der längste Tag</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_title_description">
+            <English>Three stages to victory!</English>
+            <German>Drei Phasen zum Sieg!</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_northWestAltis">
+            <English>North-west of Altis</English>
+            <German>Nordwest von Altis</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_situation_description">
+            <English>CSAT boldly annexed the island of Altis. As we learned a century ago, appeasement is not an option.</English>
+            <German>CSAT war so dreist die Insel Altis zu annektieren. Wie wir bereits vom letzten Jahrhundert gelernt haben, ist Beschwichtigungspolitik keine Lösung.</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_mission_description">
+            <English>NATO sends in Task Force Aegis to attack critical CSAT installations for preparing the liberation.</English>
+            <German>NATO schickt die Einsatzgruppe Ägis um kritische CSAT Stützpunkte zu zerstören um den Weg für die Befreiung zu bahnen.</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_execution_description">
+            <English>The mission consists of three stages: In the first two stages critical installations are eliminated. The subsequent last stage is the main assault.</English>
+            <German>Die Mission besteht aus drei Phasen: In den ersten zwei Phasen werden kritische Stützpunkte eliminiert. Die nachfolgende letzte Phase ist der Hauptangriff.</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_signal_description">
+            <English>&lt;marker name="TLD_ussFreedom"&gt;USS Freedom&lt;/marker&gt; - Base&lt;br/&gt;Eagle - Transport&lt;br/&gt;Alpha Squad - Weapons squad&lt;br/&gt;Bravo Squad - Weapons squad&lt;br/&gt;Delta Squad - AA/AT squad&lt;br/&gt;Falcon - British special forces</English>
+            <German>&lt;marker name="TLD_ussFreedom"&gt;USS Freedom&lt;/marker&gt; - Basis&lt;br/&gt;Adler - Transport&lt;br/&gt;Alpha Team - Waffentrupp&lt;br/&gt;Bravo Team - Waffentrupp&lt;br/&gt;Delta team - Flug- und Panzerabwehrtrupp&lt;br/&gt;Falke - Britische Spezialeinheit</German>
+        </Key>
+        <Key ID="STR_TLD_briefing_assets_description">
+            <English>4x UH-80 Ghost Hawk&lt;br/&gt;2x MH-9 Hummingbird&lt;br/&gt;2x CH-67 Huron&lt;br/&gt;2x V-44 X Blackfish&lt;br/&gt;5x Assault Boat</English>
+            <German>4x UH-80 Ghost Hawk&lt;br/&gt;2x MH-9 Hummingbird&lt;br/&gt;2x CH-67 Huron&lt;br/&gt;2x V-44 X Blackfish&lt;br/&gt;5x Assault Boat</German>
+        </Key>
+    </Package>
+    <Package name="Fatigue">
+        <Key ID="STR_TLD_fatigue">
+            <English>Fatigue</English>
+            <German>Erschöpfung</German>
+        </Key>
+        <Key ID="STR_TLD_fatigue_disabled">
+            <English>Disabled</English>
+            <German>Inaktiv</German>
+        </Key>
+        <Key ID="STR_TLD_fatigue_enabled">
+            <English>Enabled</English>
+            <German>Aktiv</German>
+        </Key>
+    </Package>
+    <Package name="Group">
+        <Key ID="STR_TLD_group_eagle">
+            <English>Eagle</English>
+            <German>Adler</German>
+        </Key>
+        <Key ID="STR_TLD_group_alphaSquad">
+            <English>Alpha Squad</English>
+            <German>Alpha Team</German>
+        </Key>
+        <Key ID="STR_TLD_group_bravoSquad">
+            <English>Bravo Squad</English>
+            <German>Bravo Team</German>
+        </Key>
+        <Key ID="STR_TLD_group_deltaSquad">
+            <English>Delta Squad</English>
+            <German>Delta Team</German>
+        </Key>
+        <Key ID="STR_TLD_group_falcon">
+            <English>Falcon</English>
+            <German>Falke</German>
+        </Key>
+    </Package>
+    <Package name="Heli">
+        <Key ID="STR_TLD_heli_pilotsOnly">
+            <English>Only pilots are allowed flying!</English>
+            <German>Nur Piloten dürfen fliegen!</German>
+        </Key>
+    </Package>
+    <Package name="Marker">
+        <Key ID="STR_TLD_marker_ussFreedom">
+            <English>USS Freedom</English>
+            <German>USS Freedom</German>
+        </Key>
+    </Package>
+    <Package name="Role">
+        <Key ID="STR_TLD_role_miller">
+            <English>1: Miller (Leader)</English>
+            <German>1: Miller (Führer)</German>
+        </Key>
+        <Key ID="STR_TLD_role_james">
+            <English>2: James (Medic)</English>
+            <German>2: James (Sanitäter)</German>
+        </Key>
+        <Key ID="STR_TLD_role_northgate">
+            <English>3: Northgate (AT)</English>
+            <German>3: Northgate (Panzerabwehr)</German>
+        </Key>
+        <Key ID="STR_TLD_role_oConnor">
+            <English>4: O'Connor (Marksman)</English>
+            <German>4: O'Connor (Scharfschütze)</German>
+        </Key>
+        <Key ID="STR_TLD_role_mcKay">
+            <English>5: McKay (Autorifleman)</English>
+            <German>5: McKay (Automatik-Schütze)</German>
+        </Key>
+        <Key ID="STR_TLD_role_hardy">
+            <English>6: Hardy (Explosive Specialist)</English>
+            <German>6: Hardy (Sprengmeister)</German>
+        </Key>
+    </Package>
+    <Package name="Task">
+        <Key ID="STR_TLD_task_stageOne">
+            <English>Stage One</English>
+            <German>Erste Phase</German>
+        </Key>
+        <Key ID="STR_TLD_task_stageOne_description">
+            <English>CSAT set up strong air defenses. We have reports on at least two S-750 Rheas and one R-750 Cronus.&lt;br/&gt;Recommended execution: Falcon is tasked with the destruction of the radar site. As soon as the radar is down, Alpha and Bravo can take out the factory and Y-32 Xi'ans. Delta and Falcon will provide support on demand.</English>
+            <German>CSAT hat eine starke Luftabwehr aufgebaut. Wir wissen zumindest von zwei S-750 Rheas und ein R-750 Cronus.&lt;br/&gt;Empfohlene Durchführung: Falke hat die Aufgabe den Radar zu zerstören. Sobald der Radar Geschichte ist, wird Alpha und Bravo die Fabrik und Y-32 Xi'ans zerstören. Delta und Falke bieten Unterstützung nach Bedarf.</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyRadar">
+            <English>Destroy Radar</English>
+            <German>Zerstöre Radar</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyRadar_description">
+            <English>CSAT set up a R-750 Cronus on &lt;marker name="TLD_bomos"&gt;Bomos peninsula&lt;/marker&gt;. Infiltrate the site and destroy it with explosives.</English>
+            <German>CSAT hat ein R-750 Cronus auf der ;marker name="TLD_bomos"&gt;Halbinsel Bomos&lt;/marker&gt; aufgestellt. Infiltriere den Stützpunkt und zerstöre den Radar mit Sprengladungen.</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyFactory">
+            <English>Destroy Factory</English>
+            <German>Zerstöre Fabrik</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyFactory_description">
+            <English>CSAT repurposed the factory near &lt;marker name="TLD_kore"&gt;Kore&lt;/marker&gt; for production of ammunition. Destory the site to cut down enemy supplies.</English>
+            <German>CSAT hat die Fabrik in der Nähe von &lt;marker name="TLD_kore"&gt;Kore&lt;/marker&gt; für die Produktion von Munition umfunktionalisiert. Zerstöre die Fabrik um Nachschübe zu unterbinden.</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyXians">
+            <English>Destroy Y-32 Xi'ans</English>
+            <German>Zerstöre Y-32 Xi'ans</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyXians_description">
+            <English>Our scouts identified Y-32 Xi'ans on &lt;marker name="TLD_ammolofiAirstrip"&gt;Ammolofi airstrip&lt;/marker&gt;. Destroy them so the enemy cannot use them against us.</English>
+            <German>Unsere Späher haben Y-32 Xi'ans auf dem &lt;marker name="TLD_ammolofiAirstrip"&gt;Ammolofi Flugfeld&lt;/marker&gt; identifiziert. Zerstöre sie damit der Feind sie nicht gegen uns einsetzen kann.</German>
+        </Key>
+        <Key ID="STR_TLD_task_stageTwo">
+            <English>Stage Two</English>
+            <German>Zweite Phase</German>
+        </Key>
+        <Key ID="STR_TLD_task_stageTwo_description">
+            <English>Recommended execution: Falcon will kill the collaborators. Alpha will destroy the communication towers, while Delta deals with the T-100 Varsuks. Bravo provides support on demand.</English>
+            <German>Empfohlene Durchführung: Falke tötet die Kollaborateuren. Alpha zerstört den Kommunikationsknoten, währenddessen Delta sich um die T-100 Varsuks kümmert. Bravo bietet Unterstützung nach Bedarf.</German>
+        </Key>
+        <Key ID="STR_TLD_task_killCollabs">
+            <English>Kill Collaborators</English>
+            <German>Eliminiere Kollaborateuren</German>
+        </Key>
+        <Key ID="STR_TLD_task_killCollabs_description">
+            <English>Collaborators set up a base at &lt;marker name="TLD_killCollabs"&gt;Thronos castle&lt;/marker&gt;. Show them what it means to choose the wrong side by eliminating the leadership.</English>
+            <German>Kollaborateuren haben einen Stützpunkt bei der &lt;marker name="TLD_killCollabs"&gt;Thronos Burg&lt;/marker&gt; aufgebaut. Zeige denen was es bedeutet sich für die falsche Seite zu entscheiden in dem Sie die Führung eliminieren.</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyComms">
+            <English>Destroy Communication Towers</English>
+            <German>Zerstöre Kommunikationsantennen</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyComms_description">
+            <English>A critical communication node was found in &lt;marker name="TLD_agiosKonstantinos"&gt;Agios Konstantinos&lt;/marker&gt;. Destroy the communication towers to create a disarray.</English>
+            <German>Ein kritischer Kommunikationsknoten wurde in &lt;marker name="TLD_agiosKonstantinos"&gt;Agios Konstantinos&lt;/marker&gt; entdeckt. Zerstöre die Kommunikationsantennen um für Verwirrung beim Feind zu sorgen.</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyVarsuks">
+            <English>Destroy T-100 Varsuks</English>
+            <German>Zerstöre T-100 Varsuks</German>
+        </Key>
+        <Key ID="STR_TLD_task_destroyVarsuks_description">
+            <English>A shortage of fuel supplies forced a group of T-100 Varsuks to stay in &lt;marker name="TLD_agiosDionysios"&gt;Agios Dionysios&lt;/marker&gt;. This is the perfect opportunity to take them out.</English>
+            <German>Ein Mangel an Diesel zwang eine Gruppe von T-100 Varsuks in &lt;marker name="TLD_agiosDionysios"&gt;Agios Dionysios&lt;/marker&gt; zu bleiben. Dies ist der perfekte Zeitpunkt um sie zu zerstören.</German>
+        </Key>
+        <Key ID="STR_TLD_task_stageThree">
+            <English>Stage Three</English>
+            <German>Dritte Phase</German>
+        </Key>
+        <Key ID="STR_TLD_task_stageThree_description">
+            <English>You successfully destroyed several critical installations. Now is the time to liberate Altis. Unfortunately, CSAT recently deployed To-201 Shikras on the airbase.&lt;br/&gt;Recommended execution: Falcon will ensure that the To-201 Shikras will not be able to take off. All other elements will proceed with the main assault thereafter.</English>
+            <German>Sie haben erfolgreich mehrere kritische Stützpunkte ausgeschaltet. Nun ist es an der Zeit Altis zu befreien. Leider hat CSAT kürzlich To-201 Shikras auf den Luftstützpunkt gebracht.&lt;br/&gt;Empfohlene Durchführung: Falke stellt sicher, dass die To-201 Shikras nicht abheben können. Alle andere Elemente werden mit dem Hauptangriff danach fortfahren.</German>
+        </Key>
+        <Key ID="STR_TLD_task_freeKavala">
+            <English>Free Kavala</English>
+            <German>Befreie Kavala</German>
+        </Key>
+        <Key ID="STR_TLD_task_freeKavala_description">
+            <English>Free the city of &lt;marker name="TLD_freeKavala"&gt;Kavala&lt;/marker&gt;.</English>
+            <German>Befreie die Stadt &lt;marker name="TLD_freeKavala"&gt;Kavala&lt;/marker&gt;.</German>
+        </Key>
+        <Key ID="STR_TLD_task_captureAirbase">
+            <English>Capture Airbase</English>
+            <German>Erobere Luftstützpunkt</German>
+        </Key>
+        <Key ID="STR_TLD_task_captureAirbase_description">
+            <English>Capture the &lt;marker name="TLD_captureAirbase"&gt;Airbase&lt;/marker&gt; and take out any enemy air assets before they can take off.</English>
+            <German>Erobere den &lt;marker name="TLD_captureAirbase"&gt;Luftstützpunkt&lt;/marker&gt; und verhindere den Einsatz der feindlichen Luftwaffe.</German>
+        </Key>
+    </Package>
+</Project>
