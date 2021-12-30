@@ -18,7 +18,9 @@
     if (TLD_STAGE_TWO_TASKS findIf {_x call BIS_fnc_taskState isNotEqualTo "SUCCEEDED"} < 0) then {
         ["TLD_task_stateUpdated", _handle] call TLD_fnc_eventHandler_remove;
         ["TLD_task_stageTwo", "SUCCEEDED"] call TLD_fnc_task_updateState;
-        [TLD_fnc_task_stageThree, TLD_NEXT_STAGE_DELAY] call TLD_fnc_waitAndExecute;
+        // [TLD_fnc_task_stageThree, TLD_NEXT_STAGE_DELAY] call TLD_fnc_waitAndExecute;
+        "LeadTrack01a_F" remoteExecCall ["playMusic", 0];
+        [{"EveryoneWon" call BIS_fnc_endMissionServer}, TLD_END_DELAY] call TLD_fnc_waitAndExecute;
     };
 }] call TLD_fnc_eventHandler_add;
 
