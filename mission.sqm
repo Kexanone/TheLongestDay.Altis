@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=821;
+		nextID=840;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2316.8689,199.90096,22459.629};
-		dir[]={0.89662522,-0.43553814,-0.079810388};
-		up[]={0.4338229,0.90017027,-0.038615435};
-		aside[]={-0.088661432,0,-0.9960618};
+		pos[]={6244.1543,75.563721,16270.494};
+		dir[]={-0.1039459,-0.23300937,0.96690327};
+		up[]={-0.02490592,0.97247452,0.23167451};
+		aside[]={0.9942711,0,0.10688805};
 	};
 };
 binarizationWanted=0;
@@ -413,7 +413,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=267;
+		items=268;
 		class Item0
 		{
 			dataType="Object";
@@ -5677,8 +5677,8 @@ class Mission
 						};
 						class Attribute1
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="face";
+							expression="_this setface _value;";
 							class Value
 							{
 								class data
@@ -5687,10 +5687,10 @@ class Mission
 									{
 										type[]=
 										{
-											"BOOL"
+											"STRING"
 										};
 									};
-									value=0;
+									value="";
 								};
 							};
 						};
@@ -5734,8 +5734,8 @@ class Mission
 						};
 						class Attribute4
 						{
-							property="face";
-							expression="_this setface _value;";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
@@ -5744,10 +5744,10 @@ class Mission
 									{
 										type[]=
 										{
-											"STRING"
+											"BOOL"
 										};
 									};
-									value="";
+									value=0;
 								};
 							};
 						};
@@ -6888,6 +6888,8 @@ class Mission
 			flags=5;
 			class Attributes
 			{
+				init="if (local this) then {" \n "    this addEventHandler [""Killed"", {" \n "        params [""_dome""];" \n "        createSimpleObject [""Land_Dome_01_small_green_ruins_F"", getPosASL _dome];" \n "        deleteVehicle _dome;" \n "    }];" \n "};";
+				name="TLD_FACTORY_PART_6";
 				dynamicSimulation=1;
 			};
 			id=405;
@@ -6974,7 +6976,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -8089,6 +8091,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						name="TLD_FACTORY_WORKER_1";
 					};
 					id=516;
 					type="C_man_w_worker_F";
@@ -8160,6 +8163,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						name="TLD_FACTORY_WORKER_2";
 					};
 					id=518;
 					type="C_man_w_worker_F";
@@ -8231,6 +8235,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						name="TLD_FACTORY_WORKER_3";
 					};
 					id=520;
 					type="C_man_w_worker_F";
@@ -14397,6 +14402,25 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item267
+		{
+			dataType="Trigger";
+			position[]={6236.8208,44.077999,16265.433};
+			class Attributes
+			{
+				text="Makes workers flee when a player enters";
+				onActivation="{" \n "     private _group = group _x;" \n "    _x playAction ""panic"";" \n "    _group setSpeedMode ""Full"";" \n "    _group addWaypoint [getPosASL _x vectorAdd [0, -1e3, 0], -1];" \n "} forEach [" \n "    TLD_FACTORY_WORKER_1," \n "    TLD_FACTORY_WORKER_2," \n "    TLD_FACTORY_WORKER_3" \n "]";
+				sizeA=1.5;
+				sizeB=1;
+				sizeC=2;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=834;
+			type="EmptyDetectorArea10x10";
+			atlOffset=1.0779991;
 		};
 	};
 	class Connections
