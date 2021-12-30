@@ -4,8 +4,9 @@ class Spawn {
     class spawn_preInit {
         preInit = 1;
     };
+    class spawn_group;
+    class spawn_observer;
     class spawn_stageOne;
     class spawn_stageTwo;
     class spawn_stageThree;
-    class spawn_taskPatrol;
 };

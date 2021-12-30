@@ -3,6 +3,8 @@ class Task {
     class task_postInit {
         postInit = 1;
     };
+    class task_observe;
+    class task_patrol;
     class task_stageOne;
     class task_stageTwo;
     class task_stageThree;
