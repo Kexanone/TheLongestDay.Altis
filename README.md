@@ -8,11 +8,11 @@ CO-50 The Longest Day by Xeno was a popular COOP mission back in Arma 2 Free. Yo
 
 ### General
 
-This is a mission for Arma 3 by Kex inspired by the original with only vanilla assets. You will start from USS Liberty and free the island from CSAT occupation in three stages:
+This is a mission for Arma 3 inspired by the original with only vanilla assets. You will start from USS Liberty and free the island from CSAT occupation in three stages:
 
 1. Stage one
     - Destroy radar on Bomos peninsula
-    - Destroy ammuntion factory near Kore
+    - Destroy ammunition factory near Kore
     - Destroy Y-32 Xi'ans at Ammolofi airstrip
 2. Stage two
     - Kill collaborators at Thronos castle

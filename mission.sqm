@@ -21,13 +21,13 @@ class EditorData
 	class Camera
 	{
 		pos[]={4941.0845,404.30328,21855.902};
-		dir[]={-0.17657626,-0.65199178,0.73738694};
-		up[]={-0.15183575,0.75822026,0.63407063};
-		aside[]={0.97251076,4.4092303e-008,0.23287851};
+		dir[]={-0.23437701,-0.67421651,0.7003572};
+		up[]={-0.21396567,0.73853308,0.63936496};
+		aside[]={0.94830728,-1.0120857e-008,0.31735447};
 	};
 };
 binarizationWanted=0;
-sourceName="TheLongestDay";
+sourceName="TheLongestDayKexed";
 addons[]=
 {
 	"A3_Boat_F_Jets_Carrier_01",
@@ -4635,14 +4635,14 @@ class Mission
 						};
 						class Attribute1
 						{
-							property="face";
-							expression="_this setface _value;";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
-									singleType="STRING";
-									value="";
+									singleType="BOOL";
+									value=0;
 								};
 							};
 						};
@@ -4674,14 +4674,14 @@ class Mission
 						};
 						class Attribute4
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="face";
+							expression="_this setface _value;";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
-									value=0;
+									singleType="STRING";
+									value="";
 								};
 							};
 						};

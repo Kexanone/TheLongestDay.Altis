@@ -26,8 +26,8 @@
     </Package>
     <Package name="Briefing">
         <Key ID="STR_TLD_briefing_title">
-            <English>The Longest Day</English>
-            <German>Der längste Tag</German>
+            <English>CO-30 The Longest Day (Kexed)</English>
+            <German>CO-30 Der längste Tag (Kexed)</German>
         </Key>
         <Key ID="STR_TLD_briefing_title_description">
             <English>Three stages to victory!</English>
