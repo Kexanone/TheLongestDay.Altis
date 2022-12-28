@@ -13,13 +13,12 @@
     "move2",
     false
 ] call BIS_fnc_taskCreate;
-["TLD_task_stateUpdated", {
-    params ["", "", "_handle"];
+TLD_task_stageTwo_handle = ["TLD_task_stateUpdated", {
     if (TLD_STAGE_TWO_TASKS findIf {_x call BIS_fnc_taskState isNotEqualTo "SUCCEEDED"} < 0) then {
-        ["TLD_task_stateUpdated", _handle] call TLD_fnc_eventHandler_remove;
+        ["TLD_task_stateUpdated", TLD_task_stageTwo_handle] call TLD_fnc_eventHandler_remove;
         ["TLD_task_stageTwo", "SUCCEEDED"] call TLD_fnc_task_updateState;
         // [TLD_fnc_task_stageThree, TLD_NEXT_STAGE_DELAY] call TLD_fnc_waitAndExecute;
-        "LeadTrack01a_F" remoteExecCall ["playMusic", 0];
+        ["TLD_playMusic", "LeadTrack01a_F"] call TLD_fnc_globalEvent;
         [{"EveryoneWon" call BIS_fnc_endMissionServer}, TLD_END_DELAY] call TLD_fnc_waitAndExecute;
     };
 }] call TLD_fnc_eventHandler_add;
@@ -36,8 +35,6 @@
     "kill",
     false
 ] call BIS_fnc_taskCreate;
-TLD_STAVRO hideObjectGlobal false;
-TLD_STAVRO allowDamage true;
 TLD_STAVRO addEventHandler ["Killed", {["TLD_task_killCollabs", "SUCCEEDED"] call TLD_fnc_task_updateState}];
 
 "TLD_destroyComms" setMarkerAlpha 1;
@@ -53,8 +50,6 @@ TLD_STAVRO addEventHandler ["Killed", {["TLD_task_killCollabs", "SUCCEEDED"] cal
     false
 ] call BIS_fnc_taskCreate;
 {
-    _x hideObjectGlobal false;
-    _x allowDamage true;
     private _handle = _x  addEventHandler ["Killed", {
         if (TLD_COMMS findIf {alive _x} >= 0) exitWith {};
         ["TLD_task_destroyComms", "SUCCEEDED"] call TLD_fnc_task_updateState;
@@ -76,8 +71,6 @@ TLD_STAVRO addEventHandler ["Killed", {["TLD_task_killCollabs", "SUCCEEDED"] cal
     false
 ] call BIS_fnc_taskCreate;
 {
-    _x hideObjectGlobal false;
-    _x allowDamage true;
     private _handle = _x  addEventHandler ["Killed", {
         if (TLD_VARSUKS findIf {alive _x} >= 0) exitWith {};
         ["TLD_task_destroyVarsuks", "SUCCEEDED"] call TLD_fnc_task_updateState;

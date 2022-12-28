@@ -38,8 +38,8 @@
             <German>Nordwest von Altis</German>
         </Key>
         <Key ID="STR_TLD_briefing_situation_description">
-            <English>CSAT boldly annexed the island of Altis. As we learned a century ago, appeasement is not an option.</English>
-            <German>CSAT war so dreist die Insel Altis zu annektieren. Wie wir bereits vom letzten Jahrhundert gelernt haben, ist Beschwichtigungspolitik keine Lösung.</German>
+            <English>CSAT annexed the island of Altis illegally a few days ago. The AAF (our allies) had no chance against the overwhelming CSAT forces and lost complete control of the island.</English>
+            <German>CSAT hat vor ein paar Tagen die Insel Altis illegal annektiert. Die AAF (unsere Verbündeten) hatten keine Chance gegen die überlegene CSAT Streigkräfte und haben komplett die Kontrolle über die Insel verloren.</German>
         </Key>
         <Key ID="STR_TLD_briefing_mission_description">
             <English>NATO sends in Task Force Aegis to attack critical CSAT installations for preparing the liberation.</English>
@@ -104,6 +104,12 @@
         <Key ID="STR_TLD_marker_ussFreedom">
             <English>USS Freedom</English>
             <German>USS Freedom</German>
+        </Key>
+    </Package>
+    <Package name="Skill">
+        <Key ID="STR_TLD_enemySkill">
+            <English>Enemy Skill</English>
+            <German>Fähigkeit des Feinden</German>
         </Key>
     </Package>
     <Package name="Role">

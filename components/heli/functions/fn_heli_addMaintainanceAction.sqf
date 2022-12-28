@@ -6,8 +6,8 @@ params ["_unit", "_base"];
     "Maintainance", 
     "data\images\holdAction_wrench_ca.paa", 
     "data\images\holdAction_wrench_ca.paa", 
-    "(" + str _base + " distance2D vehicle _this < 180) && {speed vehicle _this < 0.3} && {_this != vehicle _this} && {isTouchingGround vehicle _this || vehicle _this getVariable [""TLD_maintainance_vehPosATL"", [0,0,0]] distance getPosATL vehicle _this < 1}", 
-    "(_caller != vehicle _caller) && {!(vehicle _caller getVariable [""TLD_maintainance_failed"", false])} && {vehicle _caller getVariable [""TLD_maintainance_vehPosATL"", [0,0,0]] distance getPosATL vehicle _caller < 1}",
+    "(" + str _base + " distance2D vehicle _this < 180) && {speed vehicle _this < 0.3} && {_this isNotEqualTo vehicle _this} && {_this isEqualTo driver vehicle _this} && {isTouchingGround vehicle _this || vehicle _this getVariable [""TLD_maintainance_vehPosATL"", [0,0,0]] distance getPosATL vehicle _this < 1}", 
+    "(_caller isNotEqualTo vehicle _caller) && {_caller isEqualTo driver vehicle _caller} && {!(vehicle _caller getVariable [""TLD_maintainance_failed"", false])} && {vehicle _caller getVariable [""TLD_maintainance_vehPosATL"", [0,0,0]] distance getPosATL vehicle _caller < 1}",
     {
         params ["_unit"];
         private _vehicle = vehicle _unit;

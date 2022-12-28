@@ -59,11 +59,11 @@ if (!isPlayer _unit) then
         private _packHolder = createVehicle ["groundWeaponHolder", [0,0,0], [], 0, "can_collide"];
         _packHolder addBackpackCargoGlobal [_backpack_class, 1];
         waitUntil {animationState _unit == "HaloFreeFall_non" or (!alive _unit)};
-        _packHolder attachTo [_unit,[-0.12,-0.02,-.74],"pelvis"];
-        [_packHolder, [[0,-1,-0.05],[0,0,-1]]] remoteExecCall ["setVectorDirAndUp", 0, _packHolder];
+        _packHolder attachTo [_unit,[-0.12,-0.02,-.74], "pelvis"];
+        _packHolder setVectorDirAndUp [[0,-1,-0.05], [0,0,-1]];
         waitUntil {animationState _unit == "para_pilot" or (!alive _unit)};
-        _packHolder attachTo [vehicle _unit,[-0.07,0.67,-0.13],"pelvis"];
-        [_packHolder, [[0,-0.2,-1],[0,1,0]]] remoteExecCall ["setVectorDirAndUp", 0, _packHolder];
+        _packHolder attachTo [vehicle _unit,[-0.07,0.67,-0.13], "pelvis"];
+        _packHolder setVectorDirAndUp [[0,-0.2,-1], [0,1,0]];
 
         waitUntil {isTouchingGround _unit or (getPos _unit select 2) < 1 or (!alive _unit)};
         deleteVehicle _packHolder;

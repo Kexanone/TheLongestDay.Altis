@@ -4,8 +4,7 @@
 if (hasInterface) then {
     // Reassign heli actions on player respawn
     ["TLD_playerRespawned", {
-        params ["", "_eventArgs"];
-        _eventArgs params ["_newUnit", "_oldUnit"];
+        params ["_newUnit", "_oldUnit"];
 
         if (_newUnit isKindOf TLD_HELI_PILOT_CLASS) then {
             [_newUnit, TLD_USS_FREEDOM] call TLD_fnc_heli_addMaintainanceAction;
@@ -24,8 +23,7 @@ if (hasInterface) then {
 if (isServer) then {
     // Reassign heli action and customizations on heli respawn
     ["TLD_vehicleRespawned", {
-        params ["", "_eventArgs"];
-        _eventArgs params ["_newHeli", ["_oldHeli", objNull]];
+        params ["_newHeli"];
     
         // Set textures
         private _texturing = switch (typeOf _newHeli) do {
@@ -34,18 +32,23 @@ if (isServer) then {
             case "B_T_VTOL_01_infantry_F": {["Blue", 1],};
             default {[]};
         };
+        if (_newHeli isKindOf "B_Heli_Transport_03_unarmed_F") then {systemchat str _texturing};
         [_newHeli, _texturing, true] call BIS_fnc_initVehicle;
 
+        // Add arsenal
+        _newHeli setVariable ["bis_fnc_arsenal_action", nil, true]; // Fixes arsenal on respawn
+        ["AmmoboxInit",[_newHeli,true]] call BIS_fnc_arsenal;
+
         // Restrict driver seat to pilots
-        [_newHeli, false] remoteExecCall ["enableCopilot", 0, _newHeli];
+        ["TLD_enableCopilot", [_newHeli, false], _newHeli] call TLD_fnc_globalEvent;
         _newHeli addEventHandler ["GetIn", {
             params ["_heli", "_role", "_unit"];
-            [_heli, _role, _unit] call TLD_fnc_heli_restrictDriver;
+            [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
         }];
         _newHeli addEventHandler ["SeatSwitched", {
             params ["_heli", "_unit"];
             (assignedVehicleRole _unit) params ["_role", ""];
-            [_heli, _role, _unit] call TLD_fnc_heli_restrictDriver;
+            [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
         }];
     }] call TLD_fnc_eventHandler_add;
 };

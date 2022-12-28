@@ -1,22 +1,88 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 // Server side pre init
 if !(isServer) exitWith {};
 
-["TLD_stageOne_init", {
-    params ["", "", "_handle"];
-    [] call TLD_fnc_spawn_stageOne;
-    ["TLD_stageOne_init", _handle] call TLD_fnc_eventHandler_remove;
+TLD_spawn_stageOne_handle = ["TLD_stageOne_init", {
+    [] spawn TLD_fnc_spawn_stageOne;
+    ["TLD_stageOne_init", TLD_spawn_stageOne_handle] call TLD_fnc_eventHandler_remove;
 }] call TLD_fnc_eventHandler_add;
 
-["TLD_stageTwo_init", {
-    params ["", "", "_handle"];
-    [] call TLD_fnc_spawn_stageTwo;
-    ["TLD_stageTwo_init", _handle] call TLD_fnc_eventHandler_remove;
+TLD_spawn_stageTwo_handle = ["TLD_stageTwo_init", {
+    [] spawn TLD_fnc_spawn_stageTwo;
+    ["TLD_stageTwo_init", TLD_spawn_stageTwo_handle] call TLD_fnc_eventHandler_remove;
 }] call TLD_fnc_eventHandler_add;
 
-["TLD_stageThree_init", {
-    params ["", "", "_handle"];
-    [] call TLD_fnc_spawn_stageThree;
-    ["TLD_stageThree_init", _handle] call TLD_fnc_eventHandler_remove;
+TLD_spawn_stageThree_handle = ["TLD_stageThree_init", {
+    [] spawn TLD_fnc_spawn_stageThree;
+    ["TLD_stageThree_init", TLD_spawn_stageThree_handle] call TLD_fnc_eventHandler_remove;
 }] call TLD_fnc_eventHandler_add;
+
+// Spawn some additional trees
+{
+    (createSimpleObject [_x select 0, _x select 1]) setVectorDirAndUp [_x select 2, _x select 3];
+} forEach [
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4980.4,21859.8,336.565], [0,1,0], [-0.00267442,0,0.999996]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4966.36,21885.9,337.378], [0,0.989604,0.143822], [0.180963,-0.141447,0.973265]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4956.21,21853.8,336.965], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4949.79,21863.4,340.66], [0.431787,-0.901976,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4970.14,21875,338.601], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [5003.58,21873.9,335.489], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4975.27,21867.6,338.09], [0.99935,-0.0339993,-0.0119947], [0.0123949,0.0115852,0.999856]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4998.24,21863.2,337.342], [0.71684,0.695668,0.0467514], [-0.0151444,-0.0515015,0.998558]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4979.22,21902.4,338.703], [0,0.999928,-0.011995], [-0.012,0.0119942,0.999856]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4986.02,21867,337.385], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4984.32,21875.7,337.512], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4991.7,21898.7,328.589], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4960.23,21953.4,335.795], [-0.0582436,0.99823,-0.011995], [-0.0126782,0.0112748,0.999856]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4960.81,21885.9,342.609], [-0.901446,-0.432892,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4989.71,21879.9,336.7], [0,0.999928,-0.011995], [-0.012,0.0119942,0.999856]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4992.9,21850.5,332.973], [0.583986,-0.811764,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4947.24,21946.2,340.162], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4958.23,21944.6,337.348], [0.71684,0.695668,0.0467514], [-0.0151444,-0.0515015,0.998558]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4964.68,21881.1,340.696], [0.672322,-0.740259,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4977.72,21890.4,339.045], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4946.51,21854.8,336.944], [-0.461527,-0.887126,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4972.65,21858.7,337.923], [0.99935,-0.0339993,-0.0119947], [0.0123949,0.0115852,0.999856]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4931.16,21836.6,332.996], [0.145836,-0.989309,0.000188401], [-0.00129187,0,0.999999]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4970.98,21885.7,334.24], [0,0.999978,-0.00666818], [0.280295,0.00640087,0.959893]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4972.19,21895.8,334.494], [0,0.991907,-0.126963], [0.41087,0.115752,0.904316]],
+    ["a3\plants_f\bush\b_neriumo2s_white_f.p3d", [4974.6,21913.2,334.685], [0.883206,0.468955,0.00533783], [0.188384,-0.36517,0.911681]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4975.33,21877.9,331.715], [0,0.991907,-0.126963], [0.41087,0.115752,0.904316]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4965.48,21872.2,333.303], [0,0.999978,-0.00666818], [0.280295,0.00640087,0.959893]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4947.53,21862,333.001], [0.91907,-0.373083,-0.126963], [-0.0472877,-0.424236,0.904316]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4951.44,21863.5,333.217], [0,0.999978,-0.00666818], [0.280295,0.00640087,0.959893]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4950.63,21954,333.115], [0,0.999978,-0.00666818], [0.280295,0.00640087,0.959893]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4941.04,21946.5,337.216], [-0.992642,-0.120899,-0.00666823], [-0.040242,0.277465,0.959893]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4966.74,21924.4,336.386], [0.768072,-0.640364,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4942.55,21938.8,344.522], [0,1,0], [0,0,1]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4980.97,21883.1,331.458], [0,0.991907,-0.126963], [0.41087,0.115752,0.904316]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4961.46,21919.3,340.186], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4940.36,21844.3,336.588], [0.746763,-0.663073,-0.0517669], [0.037308,-0.0359496,0.998657]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4946.84,21841.9,336.331], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4931.54,21849,337.883], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4979.81,21849.9,336.883], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4990.27,21856.6,336.928], [0.743493,-0.661249,-0.0998361], [0.108686,-0.0278236,0.993687]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4946.9,21848.8,336.6], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4944.64,21850.8,337.383], [-0.689289,-0.724487,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4978.1,21846.8,333.373], [0.583981,-0.808468,-0.0731104], [-0.00399675,-0.0929258,0.995665]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4974.61,21830.9,334.699], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4959.36,21817.1,329.409], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4979.53,21802.7,324.11], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4988.74,21832.7,335.885], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4964.31,21809.5,329.595], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4985.38,21816,330.982], [0.68388,-0.729594,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4984.69,21829.9,330.744], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4953.81,21817.1,334.16], [-0.901446,-0.432892,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_f.p3d", [4978.17,21822.7,332.84], [0,1,0], [0,0,1]],
+    ["a3\plants_f\tree\t_pinuss2s_b_f.p3d", [4970.72,21821.6,335.165], [0,1,0], [0,0,1]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4975.68,21828.9,328.056], [0,0.902928,0.429791], [0.00129158,-0.429791,0.902928]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4964.45,21825.9,328.987], [0,0.999712,0.0239934], [0.0968769,-0.0238805,0.99501]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4972.19,21851.1,330.923], [0.716403,-0.697687,0], [0,0,1]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4973.97,21814.3,325.681], [0,0.910325,0.413895], [0.031983,-0.413683,0.909859]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4923.15,21844.5,333.493], [-0.838924,-0.544249,0.000188401], [-0.000537529,0.00117473,0.999999]],
+    ["a3\plants_f\tree\t_pinuss1s_f.p3d", [4922.07,21836.3,332.061], [-0.301399,0.953498,0.000188386], [0.00127536,0.000205566,0.999999]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4974.97,21859.9,331.455], [0,1,0], [0,0,1]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4943.77,21867.3,334.627], [0,0.902928,0.429791], [0.00129158,-0.429791,0.902928]],
+    ["a3\plants_f\bush\b_neriumo2d_f.p3d", [4945.98,21867.9,335], [-0.853373,0.295016,0.429791], [0.406625,-0.139205,0.902928]]
+];

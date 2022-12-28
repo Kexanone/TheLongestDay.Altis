@@ -13,10 +13,9 @@
     "move1",
     false
 ] call BIS_fnc_taskCreate;
-["TLD_task_stateUpdated", {
-    params ["", "", "_handle"];
+TLD_task_stageOne_handle = ["TLD_task_stateUpdated", {
     if (TLD_STAGE_ONE_TASKS findIf {_x call BIS_fnc_taskState isNotEqualTo "SUCCEEDED"} < 0) then {
-        ["TLD_task_stateUpdated", _handle] call TLD_fnc_eventHandler_remove;
+        ["TLD_task_stateUpdated", TLD_task_stageOne_handle] call TLD_fnc_eventHandler_remove;
         ["TLD_task_stageOne", "SUCCEEDED"] call TLD_fnc_task_updateState;
         [TLD_fnc_task_stageTwo, TLD_NEXT_STAGE_DELAY] call TLD_fnc_waitAndExecute;
     };
@@ -50,12 +49,12 @@ TLD_RADAR addEventHandler ["Killed", {["TLD_task_destroyRadar", "SUCCEEDED"] cal
     private _handle = _x  addEventHandler ["Killed", {
         ["TLD_task_destroyFactory", "SUCCEEDED"] call TLD_fnc_task_updateState;
         {
-            private _handle = _x getVariable "TLD_killedHandle";
+            private _handle = _x getVariable "TLD_task_killedHandle";
             _x removeEventHandler ["Killed", _handle];
             _x setDamage 1;
         } forEach TLD_FACTORY_PARTS;
     }];
-    _x setVariable ["TLD_killedHandle", _handle];
+    _x setVariable ["TLD_task_killedHandle", _handle];
 
 } forEach TLD_FACTORY_PARTS;
 
@@ -75,10 +74,10 @@ TLD_RADAR addEventHandler ["Killed", {["TLD_task_destroyRadar", "SUCCEEDED"] cal
         if (TLD_XIANS findIf {alive _x} >= 0) exitWith {};
         ["TLD_task_destroyXians", "SUCCEEDED"] call TLD_fnc_task_updateState;
         {
-            private _handle = _x getVariable "TLD_killedHandle";
+            private _handle = _x getVariable "TLD_task_killedHandle";
             _x removeEventHandler ["Killed", _handle];
         } forEach TLD_XIANS;
     }];
-    _x setVariable ["TLD_killedHandle", _handle];
+    _x setVariable ["TLD_task_killedHandle", _handle];
 
 } forEach TLD_XIANS;

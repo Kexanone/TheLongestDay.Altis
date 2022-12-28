@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 // Collab
 {
@@ -11,6 +11,8 @@
     [configFile >> "CfgGroups" >> "East" >> "OPF_R_F" >> "SpecOps" >> "O_R_ReconSquad", 2],
     [configfile >> "CfgGroups" >> "East" >> "OPF_R_F" >> "SpecOps" >> "O_R_ReconTeam", 1]
 ];
+TLD_STAVRO hideObjectGlobal false;
+TLD_STAVRO allowDamage true;
 
 // Comms
 {
@@ -41,6 +43,10 @@
 } forEach [
     [["O_APC_Tracked_02_AA_F"], 1]
 ];
+{
+    _x hideObjectGlobal false;
+    _x allowDamage true;
+} forEach TLD_COMMS;
 
 // Varsuk
 {
@@ -72,3 +78,8 @@
 } forEach [
     [["O_APC_Tracked_02_AA_F"], 3]
 ];
+{
+    _x hideObjectGlobal false;
+    _x allowDamage true;
+    [group effectiveCommander _x] call TLD_fnc_task_observe;
+} forEach TLD_VARSUKS;

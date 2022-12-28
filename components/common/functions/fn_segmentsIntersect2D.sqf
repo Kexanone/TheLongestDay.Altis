@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 // Reference: https://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/
 
 params [

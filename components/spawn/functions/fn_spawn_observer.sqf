@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 params [
     ["_outerPolygon", [], [[]]],
@@ -8,8 +8,8 @@ params [
 ];
 
 private _group = [
-    [_outerPolygon, _innerPolygon] call TLD_fnc_samplePosInPolygon,
-    _side, _toSpawn, [], [], [], [], [], random 360, false
+    [_outerPolygon, _innerPolygon, TLD_SPAWN_OBJ_DIST] call TLD_fnc_samplePosInPolygon,
+    _side, _toSpawn, nil, nil, nil, nil, nil, random 360, false
 ] call TLD_fnc_spawn_group;
 [_group] call TLD_fnc_task_observe;
 _group // return value

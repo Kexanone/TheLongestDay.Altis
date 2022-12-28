@@ -13,12 +13,11 @@
     "move3",
     false
 ] call BIS_fnc_taskCreate;
-["TLD_task_stateUpdated", {
-    params ["", "", "_handle"];
+TLD_task_stageThree_handle = ["TLD_task_stateUpdated", {
     if (TLD_STAGE_THREE_TASKS findIf {_x call BIS_fnc_taskState isNotEqualTo "SUCCEEDED"} < 0) then {
-        ["TLD_task_stateUpdated", _handle] call TLD_fnc_eventHandler_remove;
+        ["TLD_task_stateUpdated", TLD_task_stageThree_handle] call TLD_fnc_eventHandler_remove;
         ["TLD_task_stageThree", "SUCCEEDED"] call TLD_fnc_task_updateState;
-        "LeadTrack01a_F" remoteExecCall ["playMusic", 0];
+        ["TLD_playMusic", "LeadTrack01a_F"] call TLD_fnc_globalEvent;
         [{"EveryoneWon" call BIS_fnc_endMissionServer}, TLD_END_DELAY] call TLD_fnc_waitAndExecute;
     };
 }] call TLD_fnc_eventHandler_add;

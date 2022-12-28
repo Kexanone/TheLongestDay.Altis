@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 params [
     ["_eventName", "", [""]],
@@ -8,6 +8,5 @@ params [
 if !(_eventName in TLD_eventHandlers) exitWith {};
 
 {
-    _y params ["_handlerFunc", "_handlerArgs"];
-    [_handlerArgs, _eventArgs, _x] call _handlerFunc;
+    _eventArgs call _y;
 } forEach (TLD_eventHandlers get _eventName);

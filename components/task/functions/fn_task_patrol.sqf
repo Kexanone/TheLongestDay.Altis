@@ -1,10 +1,11 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 params [
     ["_group", grpNull, [grpNull]],
     ["_outerPolygon", [], [[]]],
     ["_innerPolygon", [], [[]]],
     ["_nWaypoints", 5, [0]],
+    ["_minDistance", 50, [0]],
     ["_timeoutDist", [0, 5, 10], [[]]]
 ];
 

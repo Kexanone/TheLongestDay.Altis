@@ -16,6 +16,8 @@ loadScreen = "data\images\overview.paa";
 disabledAI = 1;
 aiKills = 0;
 
+zeusCompositionScriptLevel = 2;
+
 #include "config.hpp"
 #include "params.hpp"
 #include "cfgFunctions.hpp"

@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 // Radar
 {
@@ -44,3 +44,15 @@
     configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad_Weapons",
     configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfAssault"
 ];
+{
+    private _handle = _x  addEventHandler ["Killed", {
+        [TLD_XIAN_INNER_POLYGON, [], east,
+            ["O_Heli_Attack_02_black_F", "O_Heli_Attack_02_black_F"]
+        ] call TLD_fnc_spawn_quickReactionForce;
+        {
+            private _handle = _x getVariable "TLD_spawn_killedHandle";
+            _x removeEventHandler ["Killed", _handle];
+        } forEach TLD_XIANS;
+    }];
+    _x setVariable ["TLD_spawn_killedHandle", _handle];
+} forEach TLD_XIANS;

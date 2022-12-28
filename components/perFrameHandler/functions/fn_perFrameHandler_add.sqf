@@ -1,16 +1,20 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 params [
     ["_function", {}, [{}]],
     ["_delay", 0, [0]],
     ["_args", [], [[]]],
-    ["_condition", {true}, [{}]],
+    ["_condition", {true}, [{}, ""]],
     ["_initalDelay", false, [false]],
     ["_singleExecution", false, [false]]
 ];
 
 if (isNil "TLD_perFrameHandler_queue") then {
     TLD_perFrameHandler_queue = createHashMap;
+};
+
+if (_condition isEqualType "") then {
+    _condition = compile _condition;
 };
 
 private _handle = selectMax keys TLD_perFrameHandler_queue;

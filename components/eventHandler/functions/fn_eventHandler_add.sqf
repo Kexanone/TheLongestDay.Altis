@@ -1,9 +1,8 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 params [
     ["_eventName", "", [""]],
-    ["_handlerFunc", {}, [{}]],
-    ["_handlerArgs", []]
+    ["_handlerFunc", {}, [{}]]
 ];
 
 if (isNil "TLD_eventHandlers") then {
@@ -19,6 +18,6 @@ if (_eventName in TLD_eventHandlers) then {
     _queue = createHashMap;
     _handle = 0;
 };
-_queue set [_handle, [_handlerFunc, _handlerArgs]];
+_queue set [_handle, _handlerFunc];
 TLD_eventHandlers set [_eventName, _queue];
 _handle // Return handle

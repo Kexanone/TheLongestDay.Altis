@@ -5,6 +5,8 @@ class EventHandler {
         preInit = 1;
     };
     class eventHandler_remove;
+    class globalEvent;
     class localEvent;
     class remoteEvent;
+    class serverEvent;
 };
