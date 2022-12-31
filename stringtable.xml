@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TLD">
     <Package name="Arsenal">
-        <Key ID="STR_TLD_arsenal_tiEquipmentRemoved">
+        <Key ID="STR_TLD_arsenal_TIERemoved">
             <English>Thermal imaging equipment was removed!</English>
             <German>Wärmebildgeräte wurden entfernt!</German>
         </Key>
@@ -12,6 +12,30 @@
         <Key ID="STR_TLD_arsenal_weaponRemoved">
             <English>Weapons got removed!</English>
             <German>Waffen wurden entfernt!</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictPilotInventory">
+            <English>Restrict Pilot Inventory</English>
+            <German>Inventar von Piloten Einschränken</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictPilotInventory_disabled">
+            <English>Disabled</English>
+            <German>Inaktiv</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictPilotInventory_enabled">
+            <English>Enabled</English>
+            <German>Aktiv</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictTIE">
+            <English>Restrict Thermal Imaging Equipment</English>
+            <German>Wärmebildgeräte Einschränken</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictTIE_disabled">
+            <English>Disabled</English>
+            <German>Inaktiv</German>
+        </Key>
+        <Key ID="STR_TLD_arsenal_restrictTIE_enabled">
+            <English>Enabled</English>
+            <German>Aktiv</German>
         </Key>
     </Package>
     <Package name="BaseProtection">
@@ -95,9 +119,21 @@
         </Key>
     </Package>
     <Package name="Heli">
-        <Key ID="STR_TLD_heli_pilotsOnly">
+        <Key ID="STR_TLD_heli_pilotsOnlyHint">
             <English>Only pilots are allowed flying!</English>
             <German>Nur Piloten dürfen fliegen!</German>
+        </Key>
+        <Key ID="STR_TLD_heli_whoCanFly">
+            <English>Who can fly</English>
+            <German>Wer kann fliegen</German>
+        </Key>
+        <Key ID="STR_TLD_heli_anyone">
+            <English>Anyone</English>
+            <German>Alle</German>
+        </Key>
+        <Key ID="STR_TLD_heli_pilotsOnly">
+            <English>Pilots only</English>
+            <German>Nur Piloten</German>
         </Key>
     </Package>
     <Package name="Marker">

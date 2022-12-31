@@ -6,7 +6,11 @@ if (hasInterface) then {
     ["TLD_playerRespawned", {
         params ["_newUnit", "_oldUnit"];
 
-        if (_newUnit isKindOf TLD_HELI_PILOT_CLASS) then {
+        if ((["RestrictPilotSeat", 1] call BIS_fnc_getParamValue) isEqualTo 1) then {
+            if (_newUnit isKindOf TLD_HELI_PILOT_CLASS) then {
+                [_newUnit, TLD_USS_FREEDOM] call TLD_fnc_heli_addMaintainanceAction;
+            };
+        } else {
             [_newUnit, TLD_USS_FREEDOM] call TLD_fnc_heli_addMaintainanceAction;
         };
 
@@ -32,23 +36,24 @@ if (isServer) then {
             case "B_T_VTOL_01_infantry_F": {["Blue", 1],};
             default {[]};
         };
-        if (_newHeli isKindOf "B_Heli_Transport_03_unarmed_F") then {systemchat str _texturing};
         [_newHeli, _texturing, true] call BIS_fnc_initVehicle;
 
         // Add arsenal
         _newHeli setVariable ["bis_fnc_arsenal_action", nil, true]; // Fixes arsenal on respawn
-        ["AmmoboxInit",[_newHeli,true]] call BIS_fnc_arsenal;
+        ["AmmoboxInit", [_newHeli, true]] call BIS_fnc_arsenal;
 
-        // Restrict driver seat to pilots
-        ["TLD_enableCopilot", [_newHeli, false], _newHeli] call TLD_fnc_globalEvent;
-        _newHeli addEventHandler ["GetIn", {
-            params ["_heli", "_role", "_unit"];
-            [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
-        }];
-        _newHeli addEventHandler ["SeatSwitched", {
-            params ["_heli", "_unit"];
-            (assignedVehicleRole _unit) params ["_role", ""];
-            [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
-        }];
+        if ((["RestrictPilotSeat", 1] call BIS_fnc_getParamValue) isEqualTo 1) then {
+            // Restrict driver seat to pilots
+            ["TLD_enableCopilot", [_newHeli, false], _newHeli] call TLD_fnc_globalEvent;
+            _newHeli addEventHandler ["GetIn", {
+                params ["_heli", "_role", "_unit"];
+                [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
+            }];
+            _newHeli addEventHandler ["SeatSwitched", {
+                params ["_heli", "_unit"];
+                (assignedVehicleRole _unit) params ["_role", ""];
+                [_heli, _role, _unit] remoteExecCall ["TLD_fnc_heli_restrictDriver", _unit];
+            }];
+        };
     }] call TLD_fnc_eventHandler_add;
 };
