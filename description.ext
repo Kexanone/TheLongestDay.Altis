@@ -1,6 +1,6 @@
 class Header
 {
-	gameType = COOP;
+	gameType = Coop;
 	minPlayers = 1;
 	maxPlayers = 30;
 };
@@ -14,7 +14,12 @@ onLoadMission = $STR_TLD_briefing_title_description;
 loadScreen = "data\images\overview.paa";
 
 disabledAI = 1;
+joinUnassigned = 1;
 aiKills = 0;
+
+briefing = 0;
+enableDebugConsole = 1;
+saving = 0;
 
 zeusCompositionScriptLevel = 2;
 
