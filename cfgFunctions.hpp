@@ -12,6 +12,7 @@ class cfgFunctions {
         #include "components\identity\cfgFunctions.hpp"
         #include "components\intro\cfgFunctions.hpp"
         #include "components\perFrameHandler\cfgFunctions.hpp"
+        #include "components\playerMarker\cfgFunctions.hpp"
         #include "components\skill\cfgFunctions.hpp"
         #include "components\spawn\cfgFunctions.hpp"
         #include "components\task\cfgFunctions.hpp"

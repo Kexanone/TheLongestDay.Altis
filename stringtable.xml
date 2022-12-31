@@ -106,6 +106,20 @@
             <German>USS Freedom</German>
         </Key>
     </Package>
+    <Package name="PlayerMarker">
+        <Key ID="STR_TLD_playerMarker">
+            <English>Player Marker</English>
+            <German>Spielermarkierung</German>
+        </Key>
+        <Key ID="STR_TLD_playerMarker_disabled">
+            <English>Disabled</English>
+            <German>Inaktiv</German>
+        </Key>
+        <Key ID="STR_TLD_playerMarker_enabled">
+            <English>Enabled</English>
+            <German>Aktiv</German>
+        </Key>
+    </Package>
     <Package name="Skill">
         <Key ID="STR_TLD_enemySkill">
             <English>Enemy Skill</English>
