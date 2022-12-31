@@ -4,10 +4,10 @@ if ((["PlayerMarker", 1] call BIS_fnc_getParamValue) isEqualTo 0) exitWith {};
 
 // Client side pre init
 if (hasInterface) then {
-    TLD_playerMarker_markers = [];
+    TLD_playerMarker_players = [];
     [
         {
-            private _markers = [];
+            private _players = allPlayers;
             {
                 private _markerId = getPlayerUID _x;
                 private _playerName = name _x;
@@ -16,7 +16,7 @@ if (hasInterface) then {
                 // If player on foot or driver
                 if (_x isEqualTo effectiveCommander _vehicle) then {
                     if (markerShape _markerId isEqualTo "") then {
-                        createMarkerLocal [_markerId, getPos _vehicle];
+                        createMarkerLocal [_markerId, _vehicle];
                     };
 
                     if (_x isEqualTo _vehicle) then {
@@ -53,14 +53,14 @@ if (hasInterface) then {
 
                         _markerId setMarkerColorLocal "colorBLUFOR";
                     };
-                    _markers pushBack [_markerId, _vehicle];
                 };
-            } forEach allPlayers;
+            } forEach _players;
 
+            // Remove players that left
             {
-                deleteMarkerLocal (_x select 0);
-            } forEach (TLD_playerMarker_markers - _markers);
-            TLD_playerMarker_markers = _markers;
+                deleteMarkerLocal (getPlayerUID _x);
+            } forEach (TLD_playerMarker_players - _players);
+            TLD_playerMarker_players = _players;
         },
         TLD_PLAYER_MARKER_HANDLER_TIMEOUT
     ] call TLD_fnc_perFrameHandler_add;
@@ -68,8 +68,8 @@ if (hasInterface) then {
     [
         {
             {
-                (_x select 0) setMarkerPosLocal (_x select 1);
-            } forEach TLD_playerMarker_markers;
+                (getPlayerUID _x) setMarkerPosLocal (vehicle _x);
+            } forEach TLD_playerMarker_players;
         }
     ] call TLD_fnc_perFrameHandler_add;
 };
