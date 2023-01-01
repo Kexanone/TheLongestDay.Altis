@@ -5,4 +5,6 @@ class Common {
     };
     class directCall;
     class samplePosInPolygon;
+    class segmentIntersectsPolygon2D;
+    class segmentsIntersect2D;
 };
