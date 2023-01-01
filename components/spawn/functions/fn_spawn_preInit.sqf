@@ -3,6 +3,8 @@
 // Server side pre init
 if !(isServer) exitWith {};
 
+[] call TLD_fnc_spawn_dataInit;
+
 TLD_spawn_stageOne_handle = ["TLD_stageOne_init", {
     [] spawn TLD_fnc_spawn_stageOne;
     ["TLD_stageOne_init", TLD_spawn_stageOne_handle] call TLD_fnc_eventHandler_remove;
