@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=3698;
+		nextID=4011;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=537;
+		nextID=613;
 	};
 	class Camera
 	{
-		pos[]={4880.9004,427.83557,21812.457};
-		dir[]={-0.47372654,-0.59271276,0.65136379};
-		up[]={-0.34862047,0.80541396,0.47934562};
-		aside[]={0.80873179,1.4901161e-008,0.5881778};
+		pos[]={3927.7241,28.689564,17559.123};
+		dir[]={0.096219219,-0.47581056,0.87426895};
+		up[]={0.052051883,0.87954777,0.47295484};
+		aside[]={0.99399823,0,-0.10939623};
 	};
 };
 binarizationWanted=0;
@@ -9458,7 +9458,7 @@ class Mission
 					};
 					id=733;
 					type="Land_TripodScreen_01_large_black_F";
-					atlOffset=0.040239334;
+					atlOffset=0.038999557;
 				};
 				class Item2
 				{
@@ -9476,7 +9476,7 @@ class Mission
 					};
 					id=735;
 					type="Land_PortableDesk_01_black_F";
-					atlOffset=-0.010501862;
+					atlOffset=-0.010938644;
 				};
 				class Item3
 				{
@@ -9873,7 +9873,7 @@ class Mission
 				};
 			};
 			id=864;
-			atlOffset=10.916872;
+			atlOffset=10.916874;
 		};
 		class Item15
 		{
