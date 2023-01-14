@@ -9,6 +9,10 @@ params [
     ["_timeoutDist", [0, 5, 10], [[]]]
 ];
 
+_group setBehaviour "SAFE";
+_group setSpeedMode "LIMITED";
+_group setFormation "COLUMN";
+
 private _i = 1;
 private _prevPos = getPos leader _group;
 while {_i <= _nWaypoints} do {
@@ -26,9 +30,6 @@ while {_i <= _nWaypoints} do {
 
 if (_nWaypoints >= 1) then {
     private _waypoint = [_group, 1];
-    _waypoint setWaypointBehaviour "SAFE";
-    _waypoint setWaypointSpeed "LIMITED";
-    _waypoint setWaypointFormation "COLUMN";
 
     _waypoint = _group addWaypoint [_prevPos, 10, _nWaypoints + 1];
     _waypoint setWaypointType  "CYCLE";
