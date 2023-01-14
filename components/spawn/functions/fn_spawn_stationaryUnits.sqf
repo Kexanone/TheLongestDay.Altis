@@ -14,6 +14,7 @@ params ["_layerName", "_counts", ["_side", east, [sideUnknown]]];
         private _attributes = _attributesList select _forEachIndex;
         _x setPos (_attributes select 0);
         _x setDir (_attributes select 1);
+        _x doWatch (getPos _x getPos [300, _attributes select 1]);
         if (count _attributes isEqualTo 3) then {
             _x setUnitPos (_attributes select 2);
         };
