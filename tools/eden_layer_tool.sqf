@@ -71,6 +71,7 @@ ELT_fnc_loadSpawnPosLayers = {
 				_unit set3DENAttribute ["rotation", [0, 0, _dir]];
 				_unit set3DENAttribute ["unitpos", ["UP","MIDDLE","DOWN","AUTO"] find toUpper _unitPos];
 				_unit set3DENLayer _groupLayerId;
+				{_x set3DENLayer _groupLayerId} forEach crew _unit;
 			} forEach _locations;
 		} forEach _sublayers;
 	} forEach _layers;
