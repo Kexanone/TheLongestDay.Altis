@@ -1,12 +1,12 @@
 // Corpse management
 corpseManagerMode = 1;
-corpseLimit = 50;
+corpseLimit = 24;
 corpseRemovalMinTime = 300;
-corpseRemovalMaxTime = 1800;
+corpseRemovalMaxTime = 900;
 
 // Wreck management
 wreckManagerMode = 3;
-wreckLimit = 10;
-wreckRemovalMinTime = 30;
-wreckRemovalMaxTime = 60;
+wreckLimit = 8;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 360;
 minPlayerDistance = 50;

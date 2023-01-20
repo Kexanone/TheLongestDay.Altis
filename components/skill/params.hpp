@@ -48,5 +48,5 @@ class Skill
         "95 %",
         "100 %"
     };
-    default = 75;
+    default = 50;
 };
