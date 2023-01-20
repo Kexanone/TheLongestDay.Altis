@@ -5,6 +5,7 @@ class cfgFunctions {
         #include "components\baseProtectionHandler\cfgFunctions.hpp"
         #include "components\common\cfgFunctions.hpp"
         #include "components\curator\cfgFunctions.hpp"
+        #include "components\environment\cfgFunctions.hpp"
         #include "components\eventHandler\cfgFunctions.hpp"
         #include "components\fatigue\cfgFunctions.hpp"
         #include "components\group\cfgFunctions.hpp"
