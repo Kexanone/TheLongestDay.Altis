@@ -47,4 +47,4 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2908079154
 Please use our [Issue Tracker](https://github.com/Kexanone/TheLongestDay.Altis/issues/new/choose) to report a bug, propose a feature, or suggest changes to the existing ones.
 
 ### License
-This mission is licensed under the GNU General Public License ([GPLv3](https://github.com/Kexanone/TheLongestDay.Altis/blob/main/LICENSE)).
+This mission is licensed under the Arma Public License ([APL](https://github.com/Kexanone/TheLongestDay.Altis/blob/main/LICENSE.md)).
