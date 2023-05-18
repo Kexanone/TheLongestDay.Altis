@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/github/release/Kexanone/TheLongestDay.Altis.svg?label=Version&colorB=007EC6&style=flat-square)](https://github.com/Kexanone/TheLongestDay.Altis/releases/latest)
 [![GitHub Downloads](https://img.shields.io/github/downloads/Kexanone/TheLongestDay.Altis/total.svg?label=GitHub%20Dowloads&style=flat-square)](https://github.com/Kexanone/TheLongestDay.Altis/releases)
 [![Issues](https://img.shields.io/github/issues-raw/Kexanone/TheLongestDay.Altis.svg?label=Issues&style=flat-square)](https://github.com/Kexanone/TheLongestDay.Altis/issues)
-[![License](https://img.shields.io/badge/License-GPLv3-orange.svg?style=flat-square)](https://github.com/Kexanone/TheLongestDay.Altis/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-APL-orange.svg?style=flat-square)](https://github.com/Kexanone/TheLongestDay.Altis/blob/master/LICENSE.md)
 
 
 ## Background
